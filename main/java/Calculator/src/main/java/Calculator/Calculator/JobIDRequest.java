@@ -8,6 +8,12 @@
 
 package Calculator.Calculator;
 
+import java.sql.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -57,5 +63,30 @@ public class JobIDRequest {
     public void setJobID(int value) {
         this.jobID = value;
     }
+    
+	/**
+	 * Takes an integer job ID as input, 
+	 * and returns the actual output data.
+	 */
+	public int query() {
+		int result=0;
+		Connection c = null;
+	    Statement stmt = null;
+	    try {
+	      Class.forName("org.sqlite.JDBC");
+	      c = DriverManager.getConnection("jdbc:sqlite:JobList.db");
+	      c.setAutoCommit(false);
+	      stmt = c.createStatement();
+	      ResultSet rs = stmt.executeQuery("SELECT * FROM JOBLIST where ID="+jobID+";");
+          result = rs.getInt("answer");
+	      rs.close();
+	      stmt.close();
+	      c.close();
+	    } catch ( Exception e ) {
+	      System.err.println( e.getClass().getName() + ": " + e.getMessage() );
+	      System.exit(0);
+	    }
+		return result;
+	} //end query()
 
 }

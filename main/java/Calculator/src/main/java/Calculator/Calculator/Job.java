@@ -8,6 +8,9 @@
 
 package Calculator.Calculator;
 
+import java.sql.*;
+import java.sql.DriverManager;
+
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlType;
@@ -40,11 +43,34 @@ import javax.xml.bind.annotation.XmlType;
     "question",
     "answer"
 })
+/**
+ * Class Job stores and calculates 2nd greatest divisor of an integer.
+ * @author Huilin Pan
+ *
+ */
 public class Job {
 
+	protected static int jobIDCount;
     protected int jobID;
     protected int question;
     protected int answer;
+    
+    /**
+     * default constructor
+     */
+    public Job(){
+    	jobID=0;
+    	question=0;
+    	answer=0;
+    }
+    /**
+     * constructor with question input
+     */
+    public Job(int input){
+    	jobID=0;
+    	question=input;
+    	answer=0;
+    }
 
     /**
      * Gets the value of the jobID property.
@@ -93,5 +119,24 @@ public class Job {
     public void setAnswer(int value) {
         this.answer = value;
     }
-
-}
+    
+    /**
+     * Calculate result to answer
+     */
+    public void calculate(){
+    	answer=0;
+	    try {
+	      //calculate 2nd greatest divisor/factor
+	      if (question!=0){
+	    	  for (int i=1; i<=question/2; i++){
+	    		  if (question%i==0)
+	    			  answer=i;
+	    	  } //end for loop
+	      } //end if
+	    } catch (Exception e) {
+	      System.err.println(e.getClass().getName()+": "+e.getMessage());
+	      System.exit(0);
+	    }
+    } //end calculate()
+	
+} //end class job
