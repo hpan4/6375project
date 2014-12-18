@@ -1,0 +1,29 @@
+<xsd:schema xmlns="http://www.springwebservices.org/product/schema/beans"
+            targetNamespace="http://www.springwebservices.org/product/schema/beans"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+ 
+    <xsd:element name="query">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="jobID" type="xsd:int" />
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+     
+    <xsd:element name="submit">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="input" type="xsd:int" />
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+ 
+     <xsd:element name="execute">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="input" type="xsd:int" />
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+</xsd:schema>
