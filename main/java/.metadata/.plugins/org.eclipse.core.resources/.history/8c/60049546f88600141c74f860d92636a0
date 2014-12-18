@@ -1,0 +1,40 @@
+package Calculator.Calculator;
+
+@Endpoint
+public class SampleEndpoint {
+ 
+    public final static String NAMESPACE = "http://www.springwebservices.org/project/schema/beans";
+    public final static String GET_JOB_REQUEST = "jobRequest";
+    public final static String GET_JOBID_REQUEST="jobIDRequest";
+ 
+	/**
+	 * takes the same input but return an integer job ID 
+	 * immediately without blocking for the computation to finish. 
+	 * @param jobRequest
+	 * @return jobResponse
+	 */
+    @PayloadRoot(localPart = GET_JOB_REQUEST, namespace = NAMESPACE)
+    public @ResponsePayload JobResponse getJob(@RequestPayload JobRequest jobRequest) {
+        JobResponse jobResponse = new JobResponse();
+        Job job = new Job(jobRequest.question);
+		//update count whenever submit() is called
+		Job.jobIDCount++;
+		job.calculate();
+		storeToDB(job);
+		jobResponse.setJobID(job.jobID);
+		return jobResponse;
+    }
+    
+    /**
+    *
+    * @param jobIDRequest
+    * @return jobIDResponse
+    */
+    @PayloadRoot(localPart = GET_JOBID_REQUEST, namespace = NAMESPACE)
+    public @ResponsePayload JobIDResponse getJobID(@RequestPayload JobIDRequest jobIDRequest) {
+    	JobResponse jobResponse = new JobResponse();
+        
+        return jobResponse;
+    }
+ 
+}

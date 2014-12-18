@@ -1,5 +1,5 @@
-<xsd:schema xmlns="http://www.springwebservices.org/product/schema/beans"
-            targetNamespace="http://www.springwebservices.org/product/schema/beans"
+<xsd:schema xmlns="http://www.springwebservices.org/project/schema/beans"
+            targetNamespace="http://www.springwebservices.org/project/schema/beans"
             xmlns:xsd="http://www.w3.org/2001/XMLSchema">
  
     <xsd:element name="jobRequest">
@@ -10,6 +10,14 @@
         </xsd:complexType>
     </xsd:element>
 
+    <xsd:element name="jobResponse">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="jobID" type="xsd:int" />
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+ 
     <xsd:element name="jobIDRequest">
         <xsd:complexType>
             <xsd:sequence>
@@ -18,10 +26,10 @@
         </xsd:complexType>
     </xsd:element>
          
-    <xsd:element name="jobResponse">
+     <xsd:element name="jobIDResponse">
         <xsd:complexType>
             <xsd:sequence>
-                <xsd:element name="job" type="job" />
+                <xsd:element name="answer" type="xsd:int" />
             </xsd:sequence>
         </xsd:complexType>
     </xsd:element>
