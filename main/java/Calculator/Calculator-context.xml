@@ -14,7 +14,7 @@
         p:portTypeName="Job" p:locationUri="/Calculator/"
         p:requestSuffix="-request" p:responseSuffix="-response">
         <property name="schema">
-            <bean class="org.springframework.xml.xsd.SimpleXsdSchema" p:xsd="classpath:/Calculator.xsd" />
+            <bean class="org.springframework.xml.xsd.SimpleXsdSchema" p:xsd="classpath:/project.xsd" />
         </property>
     </bean>
  
@@ -32,7 +32,7 @@
     </bean>
  
     <bean id="marshaller" class="org.springframework.oxm.jaxb.Jaxb2Marshaller">
-        <property name="contextPath" value="org.springwebservices.product.schema.beans" />
+        <property name="contextPath" value="org.springwebservices.project.schema.beans" />
         <property name="schema" value="classpath:/product.xsd" />
     </bean>
  
