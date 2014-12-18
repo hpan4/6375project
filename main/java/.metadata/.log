@@ -1909,3 +1909,12 @@ Binding(ALT+ARROW_UP,
 
 !ENTRY org.eclipse.m2e.logback.appender 4 0 2014-12-18 16:31:44.455
 !MESSAGE Could not read pom.xml
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2014-12-18 16:35:30.386
+!MESSAGE Could not read pom.xml
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2014-12-18 16:36:29.383
+!MESSAGE Could not read pom.xml
+
+!ENTRY org.eclipse.m2e.logback.appender 4 0 2014-12-18 16:36:29.515
+!MESSAGE Could not read pom.xml
