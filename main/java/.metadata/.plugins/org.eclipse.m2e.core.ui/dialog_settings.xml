@@ -24,12 +24,15 @@
 	</section>
 	<section name="Maven2ProjectWizardArchifactPage">
 		<list key="groupId">
+			<item value="productService"/>
 			<item value="Calculator"/>
 		</list>
 		<list key="package">
+			<item value="productService.productService"/>
 			<item value="Calculator.Calculator"/>
 		</list>
 		<list key="artifactId">
+			<item value="productService"/>
 			<item value="Calculator"/>
 		</list>
 		<list key="projectNameTemplate">
