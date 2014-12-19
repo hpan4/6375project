@@ -1,4 +1,0 @@
-About this project:
-======
-This project is called Calculator, which calculates the second greatest divisor of a non-zero integer.
-User can submit a jobRequest of a non-zero integer, and obtain a jobID. With jobID, user can also retrieve answer.
