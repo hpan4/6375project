@@ -11,7 +11,7 @@
         <servlet-class>org.springframework.ws.transport.http.MessageDispatcherServlet</servlet-class>
         <init-param>
             <param-name>contextConfigLocation</param-name>
-            <param-value>classpath:/spring-ws-context.xml</param-value>
+            <param-value>classpath:/Calculator-context.xml</param-value>
         </init-param>
     </servlet>
  
